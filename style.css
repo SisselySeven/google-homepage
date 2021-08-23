@@ -1,0 +1,39 @@
+a {
+	color: black;
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
+	padding: 0 1em 0 1em;
+}
+a:hover {
+	text-decoration: underline;
+}
+.upLeft {
+	display: flex;
+
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: flex-end;
+	overflow: hidden;
+	float: left;
+}
+.upRight {
+	display: flex;
+
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	overflow: hidden;
+	float: right;
+}
+.logo {
+	grid-area: logo;
+}
+.downLeft {
+	grid-area: footer;
+}
+.downRight {
+	grid-area: footer;
+}
+.info {
+	grid-area: footer;
+}

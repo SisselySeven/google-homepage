@@ -1,3 +1,10 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-areas: 'navLeft ... navRight' 'logo logo logo' '... ... ...' '... ... ...'
+		'leftFoot centerFoot rightFoot';
+}
 a {
 	color: black;
 	text-decoration: none;
@@ -8,17 +15,17 @@ a:hover {
 	text-decoration: underline;
 }
 .upLeft {
+	grid-area: navLeft;
 	display: flex;
-
 	flex-direction: row;
 	justify-content: space-evenly;
-	align-items: flex-end;
+	align-items: flex-start;
 	overflow: hidden;
 	float: left;
 }
 .upRight {
+	grid-area: navRight;
 	display: flex;
-
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: flex-start;
@@ -27,13 +34,29 @@ a:hover {
 }
 .logo {
 	grid-area: logo;
+	display: flex;
+	justify-content: center;
 }
 .downLeft {
-	grid-area: footer;
+	grid-area: leftFoot;
+	bottom: 0;
+	left: 0;
+	position: absolute;
 }
 .downRight {
-	grid-area: footer;
+	grid-area: rightFoot;
+	bottom: 0;
+	right: 0;
+	position: absolute;
 }
 .info {
-	grid-area: footer;
+	grid-area: centerFoot;
+	text-align: center;
+	bottom: 5em;
+	position: absolute;
+}
+p {
+	color: black;
+	text-decoration: none;
+	font-family: 'Poppins', sans-serif;
 }

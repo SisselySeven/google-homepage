@@ -1,8 +1,12 @@
+body {
+	margin: 0;
+}
 .container {
 	display: grid;
+	height: 100vh;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-	grid-template-areas: 'navLeft ... navRight' 'logo logo logo' '... ... ...' '... ... ...'
+	grid-template-rows: auto 1fr 1fr 1fr auto;
+	grid-template-areas: 'navLeft ... navRight' 'main main main' 'main main main' '... ... ...'
 		'leftFoot centerFoot rightFoot';
 }
 a {
@@ -19,7 +23,7 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	align-items: flex-start;
+	align-items: flex-end;
 	overflow: hidden;
 	float: left;
 }
@@ -28,32 +32,74 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	align-items: flex-start;
+	align-items: flex-end;
 	overflow: hidden;
 	float: right;
 }
+.main {
+	grid-area: main;
+	display: grid;
+	grid-template-areas: 'logo logo logo' 'search search search';
+	position: relative;
+}
 .logo {
 	grid-area: logo;
-	display: flex;
-	justify-content: center;
+	place-self: end center;
+}
+.searchBar {
+	grid-area: search;
+	place-self: start center;
+	display: grid;
+	grid-template-areas: 'input input''... ...';
+	position: absolute;
+}
+input {
+	grid-area: input;
+	border-radius: 25px;
+	border: 1px solid rgb(213, 213, 213);
+	width: 450px;
+	padding: 5px;
+	margin: 15px;
+	height: 25px;
+	background-image: url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+	background-repeat: no-repeat;
+	background-position: right;
+}
+input:hover {
+	-moz-box-shadow: 1px 1px 5px rgb(213, 213, 213);
+	-webkit-box-shadow: 1px 1px 5px rgb(213, 213, 213);
+	box-shadow: 1px 1px 5px rgb(213, 213, 213);
+}
+button {
+	display: block;
+	margin: 0 5em 0 5em;
+	padding: 7px 0 7px 0;
+	font-family: 'Poppins', sans-serif;
+	font-size: small;
+	background-color: f2f2f2;
+	border-radius: 5px;
+	border: 1px solid transparent;
+}
+button:hover {
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(213, 213, 213);
 }
 .downLeft {
 	grid-area: leftFoot;
-	bottom: 0;
-	left: 0;
-	position: absolute;
+}
+.downLeft,
+.downRight,
+a {
+	white-space: nowrap;
 }
 .downRight {
 	grid-area: rightFoot;
-	bottom: 0;
-	right: 0;
-	position: absolute;
+	justify-self: end;
 }
 .info {
 	grid-area: centerFoot;
-	text-align: center;
-	bottom: 5em;
-	position: absolute;
+	font-size: small;
+	justify-self: center;
 }
 p {
 	color: black;

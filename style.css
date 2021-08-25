@@ -6,8 +6,7 @@ body {
 	height: 100vh;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto 1fr 1fr 1fr auto;
-	grid-template-areas: 'navLeft ... navRight' 'main main main' 'main main main' '... ... ...'
-		'leftFoot centerFoot rightFoot';
+	grid-template-areas: 'navLeft ... navRight' 'main main main' 'main main main' '... ... ...' 'footer footer footer';
 }
 a {
 	color: black;
@@ -36,6 +35,9 @@ a:hover {
 	overflow: hidden;
 	float: right;
 }
+.material-icons {
+	padding-top: 20px;
+}
 .main {
 	grid-area: main;
 	display: grid;
@@ -53,8 +55,16 @@ a:hover {
 	grid-template-areas: 'input input''... ...';
 	position: absolute;
 }
-input {
+.searchField {
 	grid-area: input;
+	position: relative;
+}
+i {
+	color: #d0d0d0;
+	position: absolute;
+	margin: 25px 0 0 25px;
+}
+input {
 	border-radius: 25px;
 	border: 1px solid rgb(213, 213, 213);
 	width: 450px;
@@ -84,8 +94,16 @@ button:hover {
 	color: rgb(0, 0, 0);
 	border: 1px solid rgb(213, 213, 213);
 }
+.footer {
+	grid-area: footer;
+	display: flex;
+	justify-content: space-around;
+	background-color: #f2f2f2;
+	height: 80px;
+	padding-bottom: 10px;
+}
 .downLeft {
-	grid-area: leftFoot;
+	align-self: flex-end;
 }
 .downLeft,
 .downRight,
@@ -93,13 +111,11 @@ a {
 	white-space: nowrap;
 }
 .downRight {
-	grid-area: rightFoot;
-	justify-self: end;
+	align-self: flex-end;
 }
 .info {
-	grid-area: centerFoot;
 	font-size: small;
-	justify-self: center;
+	align-self: flex-start;
 }
 p {
 	color: black;

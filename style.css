@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	padding-top: 10px;
 }
 .container {
 	display: grid;
@@ -22,7 +23,7 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	align-items: flex-end;
+	align-items: center;
 	overflow: hidden;
 	float: left;
 }
@@ -31,12 +32,16 @@ a:hover {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	align-items: flex-end;
+	align-items: center;
 	overflow: hidden;
 	float: right;
 }
-.material-icons {
-	padding-top: 20px;
+.nav-link > img {
+	display: flex;
+}
+.apps-icon {
+}
+.avatar {
 }
 .main {
 	grid-area: main;
@@ -59,11 +64,6 @@ a:hover {
 	grid-area: input;
 	position: relative;
 }
-i {
-	color: #d0d0d0;
-	position: absolute;
-	margin: 25px 0 0 25px;
-}
 input {
 	border-radius: 25px;
 	border: 1px solid rgb(213, 213, 213);
@@ -71,7 +71,6 @@ input {
 	padding: 5px;
 	margin: 15px;
 	height: 25px;
-	background-image: url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 	background-repeat: no-repeat;
 	background-position: right;
 }
@@ -79,6 +78,10 @@ input:hover {
 	-moz-box-shadow: 1px 1px 5px rgb(213, 213, 213);
 	-webkit-box-shadow: 1px 1px 5px rgb(213, 213, 213);
 	box-shadow: 1px 1px 5px rgb(213, 213, 213);
+}
+.search-icon {
+	position: absolute;
+	margin: 25px 0 0 27px;
 }
 button {
 	display: block;
@@ -105,17 +108,20 @@ button:hover {
 .downLeft {
 	align-self: flex-end;
 }
-.downLeft,
-.downRight,
-a {
+.downLeft > a,
+.downRight > a {
 	white-space: nowrap;
 }
 .downRight {
 	align-self: flex-end;
 }
 .info {
+	display: flex;
 	font-size: small;
 	align-self: flex-start;
+}
+.leaf-icon {
+	align-self: center;
 }
 p {
 	color: black;
